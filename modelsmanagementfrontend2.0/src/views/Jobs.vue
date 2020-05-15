@@ -1,25 +1,23 @@
 <template>
     <div id ="app">
-        <Create/>
-        <Jobs v-bind:jobs="jobs" v-on:del-job="deleteJob"/>  
+
+        <Jobs v-bind:jobs="jobs"/>
     </div>
 </template>
 
 <script>
-import Jobs from '../components/Jobs.vue';
-import Create from '../components/CreateJob.vue';
+import Jobs from './Components/Jobs';
 
 
 export default {
-    name: 'Jobsliste',
+    name: 'Jobs',
     components: {
-        Jobs,
-        Create
+        Jobs
     },
     data()
     {
         return{
-            jobs: [
+            Jobs: [
                 {
                     id: 1,
                     Name: "Flot pige"
@@ -30,7 +28,7 @@ export default {
                 },
                 {
                     id: 3,
-                    Name: "Fed pige Dorit"
+                    Name: "Tyk pige"
                 },
                 {
                     id: 4,
@@ -38,12 +36,6 @@ export default {
                 }
             ]
         }
-    },
-    methods: {
-        deleteJob(id) {
-            this.jobs = this.jobs.filter(job => job.id !== id);
-        }
     }
-
 }
 </script>
