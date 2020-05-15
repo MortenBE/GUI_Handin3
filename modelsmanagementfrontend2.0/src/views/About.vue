@@ -2,12 +2,15 @@
     <div id ="app">
         <Create/>
         <Jobs v-bind:jobs="jobs" v-on:del-job="deleteJob"/>  
+        <button v-on:click="getJobs()">Click me</button>
     </div>
 </template>
 
 <script>
 import Jobs from '../components/Jobs.vue';
 import Create from '../components/CreateJob.vue';
+import axios from 'axios';
+
 
 
 export default {
@@ -16,34 +19,21 @@ export default {
         Jobs,
         Create
     },
-    data()
-    {
-        return{
-            jobs: [
-                {
-                    id: 1,
-                    Name: "Flot pige"
-                },
-                {
-                    id: 2,
-                    Name: "Pæn pige"
-                },
-                {
-                    id: 3,
-                    Name: "Fed pige Dorit"
-                },
-                {
-                    id: 4,
-                    Name: "Høj pige"
-                }
-            ]
-        }
-    },
+      data() {
+    return {
+      jobs: []
+    }
+  },
     methods: {
         deleteJob(id) {
             this.jobs = this.jobs.filter(job => job.id !== id);
-        }
+        },
+        getJobs() {
+    axios.get('https://localhost:5001/api/jobs/')
+      .then(res => this.jobs = res.data)
+      .catch(err => console.log(err));
+      console.log(this.jobs)
     }
-
+  }
 }
 </script>

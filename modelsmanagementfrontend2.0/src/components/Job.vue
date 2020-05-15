@@ -1,13 +1,14 @@
 <template>
 
   <div class="Job">
-      <h1>
-          {{jobs.Name}}
-          <button @click="$emit('del-job', jobs.id)" class="del">
-              X
+      <h3>
+          Customer: {{jobs.customer}}, days: {{jobs.days}}, Job Location: {{jobs.location}}
+          <button @click="$emit('del-job', jobs.efJobId)" class="del">
+              <!--X-->
+              <i class="fa fa-trash"></i>
           </button>
           <!--<i class="fa fa-trash"></i>-->
-      </h1>
+      </h3>
   </div>
 </template>
 

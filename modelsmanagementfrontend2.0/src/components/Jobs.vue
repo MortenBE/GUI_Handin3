@@ -1,7 +1,7 @@
 <template>
   <div>
-      <div v-for="job in jobs" :key="job.id">
-          <Job v-bind:jobs="job" v-on:del-job="$emit('del-job', job.id)"/>
+      <div v-for="job in jobs" :key="job.efJobId">
+          <Job v-bind:jobs="job" v-on:del-job="$emit('del-job', job.efJobId)"/>
       </div>
   </div> 
   
