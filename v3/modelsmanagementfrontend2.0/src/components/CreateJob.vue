@@ -1,32 +1,36 @@
 <template>
     <div id="app">        
-        <h1>Add new Job</h1>   
+        <h2>Create Job</h2>   
+
+        <div style="width:100%">
+            <form @submit.prevent="checkForm">
+                <div class="form-group">
+                    <label for="customer">Customer</label>
+                    <input class="form-control" v-model="form.customer" name="customer" />
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start date</label>
+                    <input class="form-control" type="date" v-model="form.startDate" name="startDate" />
+                </div>
+                <div class="form-group">
+                    <label for="days">Days of work</label>
+                    <input class="form-control" v-model.number="form.days" name="days" type="number" />
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" v-model="form.location" name="location" />
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <input class="form-control" v-model="form.comments" name="comments" />
+                </div>
+                <div class="formgroup">
+                    <input type="submit" value="Create new job" class="button1"/>
+                </div>
+            </form>
+        </div>
         
-    <form @submit.prevent="checkForm">
-      <div class="form-group">
-        <label for="customer">Customer</label>
-        <input class="form-control" v-model="form.customer" name="customer" />
-      </div>
-      <div class="form-group">
-        <label for="startDate">Start date</label>
-        <input class="form-control" type="date" v-model="form.startDate" name="startDate" />
-      </div>
-      <div class="form-group">
-        <label for="days">Days of work</label>
-        <input class="form-control" v-model.number="form.days" name="days" type="number" />
-      </div>
-      <div class="form-group">
-        <label for="location">Location</label>
-        <input class="form-control" v-model="form.location" name="location" />
-      </div>
-      <div class="form-group">
-        <label for="comments">Comments</label>
-        <input class="form-control" v-model="form.comments" name="comments" />
-      </div>
-      <div class="formgroup">
-        <input type="submit" value="Create new job" class="btn btn-success" />
-      </div>
-    </form>
+    
     
     </div>
 </template>
@@ -90,6 +94,13 @@ export default {
 </script>
 
 <style scoped>
+    label{
+        margin: 2px; 
+    }
+    input{
+        margin: 2px;
+    }
+
 input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -101,6 +112,21 @@ input[type=text], select {
   color: dodgerblue;
   font-family: "Comic Sans MS", cursive, sans-serif;
   box-sizing: border-box;
+}
+.button1 {
+  
+  background-color: #2F2FA2; 
+  border: none;
+  color: white;  
+  padding: 4px 8px;
+  float:none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 5px;
+  
 }
 
   .add {

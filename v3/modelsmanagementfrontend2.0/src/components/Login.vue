@@ -1,8 +1,8 @@
 <template>
-    <div class="container" id="login" style="margin-top:20px;">
+    <div class="container" id="login" style="margin-top:5px;">
         <div class="card">
             <div class="container">
-                <input v-model="username" class="input" type="text" placeholder="Email">
+                <input v-model="username" class="input" type="text" placeholder="Email" style="margin-top:20px;">
             </div>
             <div class="container">
                 <input v-model="password" class="input" type="password" placeholder="Password">
@@ -41,10 +41,10 @@
             .then((token) => {
                 localStorage.setItem("token", token.jwt);
                 if(token.jwt == undefined)
-                    this.statusMsg = 'Unsucessful';
+                    this.statusMsg = 'Unsuccessful';
                 else
                 {                  
-                    this.statusMsg = 'Sucessful';                    
+                    this.statusMsg = 'Successful';                    
                 }
             })
             .catch(error => console.error('Error:', error));
@@ -61,6 +61,7 @@
   width: 500px;
   border-radius: 5px;
   text-align:center;
+  background-color:white;
 }
 
     #login {
@@ -76,7 +77,7 @@
     margin: 5px;
 }
 .button1 {
-  background-color: #f44336; 
+  background-color: #2F2FA2; 
   border: none;
   color: white;  
   padding: 4px 8px;

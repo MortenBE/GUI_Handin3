@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>This is all models</h2>
+        <h2>All models</h2>
         <div v-if="isLoading">
             <p>Loading content..</p>
         </div>

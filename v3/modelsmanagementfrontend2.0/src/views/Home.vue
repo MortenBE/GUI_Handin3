@@ -15,3 +15,10 @@ export default {
   }
 };
 </script>
+
+<style>
+    body {
+        background-color: #FCCD04;
+
+    }
+</style>

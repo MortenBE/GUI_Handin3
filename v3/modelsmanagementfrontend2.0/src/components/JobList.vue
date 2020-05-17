@@ -1,11 +1,9 @@
 <template>
     <div>
-        <h1>List of Jobs</h1>
-        <div v-for="job in jobs" :key="job.EfJobId">
-          
+        <h2>List of Jobs</h2>
+        <div v-for="job in jobs" :key="job.EfJobId">          
             <p>Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}</p>
-           
-    </div>
+        </div>
     </div>
 </template>
 

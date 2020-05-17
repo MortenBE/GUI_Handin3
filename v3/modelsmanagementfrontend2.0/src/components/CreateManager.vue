@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Create Manager component</h2>
+        <h2>Create Manager</h2>
         <form @submit.prevent="createManager">
             <div class="form-group">
                 <label for="firstName">First name</label>
@@ -19,7 +19,7 @@
                 <input class="form-control" v-model="form.password" name="password" />
             </div>
             <div class="formgroup">
-                <input type="submit" value="Create new manager" class="btn btn-success" />
+                <input type="submit" class="button1" value="Create new manager" />
             </div>
         </form>
 
@@ -60,5 +60,24 @@
 </script>
 
 <style scoped>
+    label{
+        margin: 2px; 
+    }
+    input{
+        margin: 2px;
+    }
+
+    .button1 {
+        background-color: #2F2FA2; 
+        border: none; 
+        color: white;  
+        padding: 4px 8px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 14px; 
+        border-radius: 8px; 
+        margin: 5px;
+    }
 
 </style>
