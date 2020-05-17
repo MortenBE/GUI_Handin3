@@ -1,13 +1,16 @@
 <template>
     <div class="container manager">
         <div class="card">
-            <ModelList />     
+            <ModelList />
         </div>
         <div class="card">
             <JobList />
         </div>
         <div class="card">
             <CreateJob />
+        </div>
+        <div class="card">
+            <CreateManager />
         </div>
     </div>
 </template>
@@ -16,13 +19,15 @@
     import ModelList from '@/components/ModelList.vue'
     import JobList from '../components/JobList'
     import CreateJob from '../components/CreateJob'
+    import CreateManager from '@/components/CreateManager.vue'
 
     export default {
         name: 'Manager',
         components: {
             ModelList,
             JobList,
-            CreateJob
+            CreateJob,
+            CreateManager
            
             
 

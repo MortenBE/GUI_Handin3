@@ -1,84 +1,64 @@
 <template>
-    <div class="CreateNewManager">
-        <form @submit.prevent="createNewManagerFunction">
-            <md-card class="md-layout-item">
-                <md-card-header>
-                    <div class="md-title">Create New Manager</div>
-                </md-card-header>
-                <md-content>
-                    <md-field>
-                        <label>First Name</label>
-                        <input v-model="managerfirstname" placeholder="managerfirstname" />
-                    </md-field>
-
-                    <md-field>
-                        <label>Last Name</label>
-                        <md-input v-model="managerlastname" />
-                    </md-field>
-
-                    <md-field>
-                        <label>Email</label>
-                        <md-input v-model="manageremail" />
-                    </md-field>
-
-                    <md-field>
-                        <label>Password</label>
-                        <md-input v-model="managerpassword" type="password" />
-                    </md-field>
-                </md-content>
-                <md-card-actions>
-                    <md-button type="submit" class="md-raised">Add New Manager</md-button>
-                </md-card-actions>
-
-            </md-card>
+    <div>
+        <h2>Create Manager component</h2>
+        <form @submit.prevent="createManager">
+            <div class="form-group">
+                <label for="firstName">First name</label>
+                <input class="form-control" v-model="form.firstName" name="firstName" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input class="form-control" v-model="form.lastName" name="lastName" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" v-model="form.email" name="email" />
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input class="form-control" v-model="form.password" name="password" />
+            </div>
+            <div class="formgroup">
+                <input type="submit" value="Create new manager" class="btn btn-success" />
+            </div>
         </form>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: 'CreateNewManager',
-        data: () => ({
-            managerlastname: '',
-            managerfirstname: '',
-            manageremail: '',
-            managerpassword: ''
-        }),
-        methods: {
-            createNewManagerFunction() {
-                var url = "https://localhost:44368/api/Managers";
-                var data = {
-                    "firstname": this.managerfirstname,
-                    "lastname": this.managerlastname,
-                    "email": this.manageremail,
-                    "password": this.managerpassword
-                };
-                fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    credentials: 'include',
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
-                        'Content-Type': 'application/json'
-                    }
-                })
-                    .then(responseJson => {
-                        JSON.parse(responseJson); //var items = 
-                    })
-                    .catch(error => this.setState({
-                        isLoading: false,
-                        message: 'Something bad happened' + error
-                    }))
-
+        name: "CreateManager",
+        data() {
+            return {
+                form: {
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: ""
+                }
             }
+
+        
+        },
+        methods: {
+            createManager() {
+                let url = "https://localhost:44368/api/Managers";
+                console.log(url);
+                fetch(url, {
+                    method: "POST",
+                    credentials: "include",
+                    body: JSON.stringify(this.form),
+                    headers: {
+                        Authorization: "Bearer " + localStorage.getItem("token"),
+                        "Content-Type": "application/json"
+                    }
+                }).catch(error => () => console.log(error));
+            }   
         }
     }
 </script>
 
 <style scoped>
-    .md-layout-item {
-        position: relative;
-        height: 450px;
-        width: 400px;
-    }
+
 </style>

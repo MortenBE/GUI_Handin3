@@ -22,7 +22,7 @@
         },
         methods: {
             GetModels() {
-                fetch('https://localhost:5001/api/Models', {
+                fetch('https://localhost:44368/api/Models', {
                     method: 'GET',
                     credentials: 'include',
                     headers: {
