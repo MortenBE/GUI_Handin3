@@ -13,6 +13,7 @@ namespace ModelsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class JobsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -31,7 +32,7 @@ namespace ModelsApi.Controllers
         {
 
             return await _context.Jobs.ToListAsync().ConfigureAwait(false);
-            /*
+            
             var modelStr = User.Claims.First(a => a.Type == "ModelId").Value;
             long modelId;
             if (!long.TryParse(modelStr, out modelId))
@@ -48,7 +49,7 @@ namespace ModelsApi.Controllers
                     .Include(r => r.Job)
                     .Select(s => s.Job)
                     .ToListAsync().ConfigureAwait(false);
-            }*/
+            }
         }
 
         // GET: api/Jobs/5

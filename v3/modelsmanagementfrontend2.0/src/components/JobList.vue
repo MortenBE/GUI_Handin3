@@ -1,61 +1,54 @@
 <template>
     <div>
-        <h1>This is the joblist</h1>
-
-        <!--<div v-if="isLoading">
-        <p>Loading content..</p>
-            </div>-->
+        <h1>List of Jobs</h1>
+        <div v-for="job in jobs" :key="job.EfJobId">
+          
+            <p>Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}</p>
+           
+    </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-
+var test;
     export default {
         name: "JobList",
         data() {
             return {
-                //isLoading: true,
-                //message: '',
+              //isLoading: true,
                 jobs: []
             }
         },
+        props: [test],
         methods: {
-            getJobs() {
-                axios.get('https://localhost:44368/api/Jobs')
-                    .then(res => this.jobs = res.data)
-                    .catch(err => console.log(err));
-                console.log(this.jobs)
-            }
-        }
-
-               
-
-
-        //methods: {
-        //    showJobList() {
-        //        fetch('https://localhost:44368/api/Jobs', {
-        //            method: 'Get',
-        //            credentials: 'include',
-        //            headers: {
-        //                'Authorization': 'Bearer ' + localStorage.getItem("token"),
-        //                'Content-Type': 'application/json'
-        //            }
-        //        }).then(res => {
-        //            if (res.status == 200) {
-        //                return res.json();
-        //            }
-        //        })
-        //        .then(responseJson => {
-        //            this.jobs = responseJson; //JSON.parse(responseJson); //ellers responseJson
-        //            this.isLoading = false;
-        //        }).catch(error => {
-        //            this.isLoading = false;
-        //            this.message = 'Somethng bad happened ' + error;
-        //        });                  
-        //    }
-        //}
+    
+    getJobs()   {
+    var url = "https://localhost:5001/api/Jobs/"
+    fetch(url, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+        "Content-Type": "application/json"
+      }
+        })
+      .then(responseJson => responseJson.json())
+      .then(data => {
+        this.jobs = data;
+        //this.isLoading = false;
+      })
+      // eslint-disable-next-line no-console
+      .catch(error => () => console.log(error));
+      //this.isLoading = false;
+      console.log(this.jobs);
     }
+    },
+      mounted() {
+      this.getJobs();
+    }
+    }
+    
+    
 </script>
 
 <style scoped>
