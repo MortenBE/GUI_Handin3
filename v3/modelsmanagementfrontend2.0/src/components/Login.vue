@@ -28,7 +28,7 @@
         },
         methods: {
             login() {
-                fetch('https://localhost:44368/api/Account/login', {
+                fetch('https://localhost:5001/api/Account/login', {
                     method: 'POST',
                     body: JSON.stringify({
                         email: this.username,

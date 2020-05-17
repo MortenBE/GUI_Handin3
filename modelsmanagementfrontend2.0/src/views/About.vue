@@ -11,7 +11,7 @@ import Jobs from '../components/Jobs.vue';
 import Create from '../components/CreateJob.vue';
 import axios from 'axios';
 
-
+var test;
 
 export default {
     name: 'Jobsliste',
@@ -30,9 +30,9 @@ export default {
         },
         getJobs() {
     axios.get('https://localhost:5001/api/jobs/')
-      .then(res => this.jobs = res.data)
+      .then(res => this.test = res.data)
       .catch(err => console.log(err));
-      console.log(this.jobs)
+      console.log(test)
     }
   }
 }

@@ -4,10 +4,10 @@
         <input type="text">
         <button class="add">add</button> -->        
     <form action="">
-        <label for="fname">Name:</label><br>
-        <input type="text" id="Name" name="Name" value="Name"><br>
-        <label for="lname">Id:</label><br>
-        <input type="text" id="Id" name="Id" value="Id"><br><br>
+        <label for="fname">Customer:</label><br>
+        <input type="text" id="Customer" name="Customer" ><br>
+        <label for="lname">Days:</label><br>
+        <input type="text" id="Days" name="Days" ><br><br>
         <input type="submit" value="Add" class=but>        
     </form> 
     </div>
@@ -19,16 +19,16 @@ export default {
   data()
   {
       return{
-          Name: '',
-          id: ''
+          Customer: '',
+          Days: ''
       }
   },
   methods:
   {
       add() {
           const NewJob = {
-              id: this.id,
-              Name: this.Name
+              id: this.Customer,
+              Name: this.Days
           }
           this.$emit('add-job',NewJob);
 
