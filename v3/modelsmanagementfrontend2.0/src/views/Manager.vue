@@ -1,17 +1,20 @@
 <template>
-    <div class="manager">
-        <h2>Manager page</h2>
+    <div class="container manager">
         <div class="card">
-            <ModelList />          
+            <ModelList />
+        </div>
+        <div class="card">
+            <CreateManager />
         </div>
         <!--<div class="card">
-            <JobList />
-        </div>-->
+        <JobList />
+    </div>-->
     </div>
 </template>
 
 <script>
     import ModelList from '@/components/ModelList.vue'
+    import CreateManager from '@/components/CreateManager.vue'
     //import JobList from '@/components/JobList'
 
 
@@ -19,8 +22,8 @@
         name: 'Manager',
         components: {
             ModelList,
-            //JobList       
-            
+            CreateManager
+            //JobList              
 
         }
     }
@@ -36,6 +39,7 @@
 
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 10px;
         transition: 0.3s;
         width: 500px;
         border-radius: 5px;
@@ -43,6 +47,11 @@
     } 
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .manager {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 
