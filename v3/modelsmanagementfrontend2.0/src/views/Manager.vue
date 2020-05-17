@@ -15,13 +15,11 @@
     //import JobList from '@/components/JobList'
 
 
-
     export default {
         name: 'Manager',
         components: {
             ModelList,
-            //JobList
-           
+            //JobList       
             
 
         }
