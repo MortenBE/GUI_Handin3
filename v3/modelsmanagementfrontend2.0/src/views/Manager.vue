@@ -12,6 +12,9 @@
         <div class="card">
             <CreateManager />
         </div>
+        <div class="card">
+            <CreateModel />
+        </div>
     </div>
 </template>
 
@@ -20,6 +23,8 @@
     import JobList from '../components/JobList'
     import CreateJob from '../components/CreateJob'
     import CreateManager from '@/components/CreateManager.vue'
+    import CreateModel from '@/components/CreateModel.vue'   
+    
 
     export default {
         name: 'Manager',
@@ -27,7 +32,8 @@
             ModelList,
             JobList,
             CreateJob,
-            CreateManager
+            CreateManager,
+            CreateModel
            
             
 
