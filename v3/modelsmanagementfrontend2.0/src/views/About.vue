@@ -1,24 +1,45 @@
 <template>
     <div class="manager">
-        <h1>Manager page</h1>
-        <Jobs/>
-        <h2>About:</h2>
-        <p></p>
-        <ModelsList />
+        <h2>Manager page</h2>
+        <div class="card">
+            <Jobs />          
+        </div>
+        <!--<div class="card">
+            <JobList />
+        </div>-->
     </div>
 </template>
 
 <script>
-    // @ is an alias to /src
-    import ModelsList from '@/components/Jobs.vue'
+    import Jobs from '@/components/Jobs.vue'
+    //import JobList from '@/components/JobList'
+
+
 
     export default {
         name: 'Manager',
         components: {
-            ModelsList
+            Jobs,
+            //JobList
+           
+            
+
         }
     }
 </script>
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 500px;
+        border-radius: 5px;
+        text-align:center;
+    } 
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+</style>
 
 
 

@@ -2,7 +2,6 @@
     <div>
         <h1>This is jobs page</h1>
     </div>
-
 </template>
 
 <script>

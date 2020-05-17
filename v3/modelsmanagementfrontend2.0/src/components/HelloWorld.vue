@@ -8,8 +8,8 @@
                 <input v-model="password" class="input" type="password" placeholder="Password">
             </div>
             <div class="container">
-                <button @click="login" style="margin:5px; margin-bottom:10px">Login</button>
-                <p>{{statusMsg}}</p>
+                <button class="button1" @click="login" style="margin:5px; margin-bottom:10px">Login</button>
+                <p>{{statusMsg}}</p>                
             </div>
         </div>
     </div>
@@ -68,4 +68,17 @@ export default {
 .input{
     margin: 5px;
 }
+.button1 {
+  background-color: #f44336; 
+  border: none;
+  color: white;  
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+
 </style>

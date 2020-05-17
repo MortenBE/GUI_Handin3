@@ -1,10 +1,11 @@
 <template>
     <div>
+        <h1>This is all models</h1>
         <div v-if="isLoading">
             <p>Loading content..</p>
         </div>
         <div v-for="model in models" :key="model.efModelId">
-            <p>{{model.email}}</p>
+            <p>{{model.email}} </p>
         </div>
     </div>
 </template>
