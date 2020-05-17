@@ -1,6 +1,5 @@
 <template>
-    <div class="manager">
-        <h2>Manager page</h2>
+    <div class="container manager">
         <div class="card">
             <ModelList />     
         </div>
@@ -32,8 +31,16 @@
 </script>
 
 <style>
+
+    /*#center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }*/
+
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 10px;
         transition: 0.3s;
         width: 500px;
         border-radius: 5px;
