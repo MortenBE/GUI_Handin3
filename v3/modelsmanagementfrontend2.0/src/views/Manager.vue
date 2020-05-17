@@ -2,7 +2,7 @@
     <div class="manager">
         <h2>Manager page</h2>
         <div class="card">
-            <Jobs />          
+            <ModelList />          
         </div>
         <!--<div class="card">
             <JobList />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import Jobs from '@/components/Jobs.vue'
+    import ModelList from '@/components/ModelList.vue'
     //import JobList from '@/components/JobList'
 
 
@@ -19,7 +19,7 @@
     export default {
         name: 'Manager',
         components: {
-            Jobs,
+            ModelList,
             //JobList
            
             
