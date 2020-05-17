@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="margin-top:20px;">
+    <div class="container" id="login" style="margin-top:20px;">
         <div class="card">
             <div class="container">
                 <input v-model="username" class="input" type="text" placeholder="Email">
@@ -61,7 +61,13 @@
   width: 500px;
   border-radius: 5px;
   text-align:center;
-} 
+}
+
+    #login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -80,6 +86,10 @@
   font-size: 14px;
   border-radius: 8px;
 }
+
+/*.container{
+    position: relative;
+}*/
 
 
 </style>
