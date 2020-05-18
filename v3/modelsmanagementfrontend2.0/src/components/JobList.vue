@@ -2,7 +2,7 @@
     <div>
         <h2>List of Jobs</h2>
         <div v-for="job in jobs" :key="job.EfJobId">          
-            <p>Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}</p>
+            <p>Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}, Model(s):</p>           
         </div>
     </div>
 </template>

@@ -20,6 +20,9 @@
             <div class="card">
                 <CreateManager />
             </div>
+            <div class="card">
+                <AddModel />
+            </div>
         </div>
         <!--<div class="card">
             <ModelList />
@@ -36,6 +39,7 @@
     import CreateJob from '../components/CreateJob'
     import CreateManager from '@/components/CreateManager.vue'
     import CreateModel from '@/components/CreateModel.vue'
+    import AddModel from '@/components/AddModel.vue'
     import DeleteModel from '@/components/DeleteModel.vue'
     
 
@@ -47,6 +51,7 @@
             CreateJob,
             CreateManager,
             CreateModel,
+            AddModel,
             DeleteModel
 
 
