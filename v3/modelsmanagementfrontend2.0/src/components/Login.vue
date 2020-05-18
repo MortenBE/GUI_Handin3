@@ -22,8 +22,8 @@
             return {
                 username: '',
                 password: '',
-                statusMsg: '', //Remove
-                modelId: '' // Remove
+                statusMsg: '',
+                modelId: '' 
             }
         },
         methods: {
@@ -87,10 +87,6 @@
   font-size: 14px;
   border-radius: 8px;
 }
-
-/*.container{
-    position: relative;
-}*/
 
 
 </style>

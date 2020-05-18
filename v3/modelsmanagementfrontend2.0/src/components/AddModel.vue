@@ -46,7 +46,6 @@
           "Content-Type": "application/json"
         }
       })
-        // eslint-disable-next-line no-console
         .catch(error => () => console.log(error));
         console.log(url);
     }

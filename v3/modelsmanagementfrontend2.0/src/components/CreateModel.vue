@@ -142,30 +142,8 @@ export default {
             "Content-Type": "application/json"
           }
         })
-          // eslint-disable-next-line no-console
           .catch(error => () => console.log(error));
           console.log("posting");
-    //   }
-    //   this.errors = [];
-    //   if (!this.form.customer) {
-    //     this.errors.push({ message: "No customer listed" });
-    //   }
-    //   if (!this.form.startDate) {
-    //     this.errors.push({ message: "No start date listed" });
-    //   }
-    //   if (!this.form.days) {
-    //     this.errors.push({ message: "Number of days of work not set" });
-    //   }
-    //   if (Number(this.form.days) <= 0) {
-    //     this.errors.push({
-    //       message: "Number of days of work was not listed or invalid number"
-    //     });
-    //   }
-    //   if (!this.form.location) {
-    //     this.errors.push({ message: "No location listed" });
-    //   }
-    //   else console.log(this.form);
-    // }
  } } 
 };
 

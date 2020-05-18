@@ -4,7 +4,7 @@
                     <div class="card">
             <ModelList />
         </div>
-            <div class="card" style="min-height:300px">
+            <div class="card" style="width=1000px">
                 <JobList />
             </div>
             <div class="card" style="min-height:300px">
@@ -26,8 +26,10 @@
             <div class="card">
                 <AddModel />
             </div>
+            <div class="card">
+                <Expenses />
+            </div>
         </div>
-        <JobList />
     </div>
 </template>
 
@@ -39,6 +41,7 @@
     import CreateModel from '@/components/CreateModel.vue'
     import AddModel from '@/components/AddModel.vue'
     import DeleteModel from '@/components/DeleteModel.vue'
+    import Expenses from '../components/ExpensesList'
     
 
     export default {
@@ -50,12 +53,8 @@
             CreateManager,
             CreateModel,
             AddModel,
-            DeleteModel
-
-
-           
-            
-
+            DeleteModel,
+            Expenses
         }
     }
 </script>
@@ -77,7 +76,7 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         margin: 10px;
         transition: 0.3s;
-        width: 500px;
+        width: 1000px;
         border-radius: 5px;
         text-align:center;       
         background-color:white;
