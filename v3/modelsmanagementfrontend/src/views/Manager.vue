@@ -58,7 +58,7 @@
             AddModel,
             DeleteModel,
             Expenses
-        }
+        },
     }
 </script>
 
