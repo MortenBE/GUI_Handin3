@@ -43,7 +43,7 @@
         },
         methods: {
             createManager() {
-                let url = "https://localhost:44368/api/Managers";
+                let url = "https://localhost:5001/api/Managers";
                 console.log(url);
                 fetch(url, {
                     method: "POST",

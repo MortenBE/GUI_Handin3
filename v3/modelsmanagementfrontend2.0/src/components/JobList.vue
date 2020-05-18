@@ -2,7 +2,7 @@
     <div>
         <h2>List of Jobs</h2>
         <div v-for="job in jobs" :key="job.EfJobId">          
-            <p>Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}, Model(s):</p>           
+            <p>Job Id: {{job.id}} Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}, Model(s):</p>           
         </div>
     </div>
 </template>
@@ -21,7 +21,7 @@ var test;
         methods: {
     
     getJobs()   {
-    var url = "https://localhost:44368/api/Jobs/"
+    var url = "https://localhost:5001/api/Jobs/"
     fetch(url, {
       method: "GET",
       credentials: "include",

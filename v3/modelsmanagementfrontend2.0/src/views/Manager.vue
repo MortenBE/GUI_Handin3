@@ -1,6 +1,9 @@
 <template>
     <div class="container">
         <div class="manager">
+                    <div class="card">
+            <ModelList />
+        </div>
             <div class="card" style="min-height:300px">
                 <JobList />
             </div>
@@ -24,17 +27,12 @@
                 <AddModel />
             </div>
         </div>
-        <!--<div class="card">
-            <ModelList />
-        </div>-->
-        
-
-
+        <JobList />
     </div>
 </template>
 
 <script>
-    //import ModelList from '@/components/ModelList.vue'
+    import ModelList from '@/components/ModelList.vue'
     import JobList from '../components/JobList'
     import CreateJob from '../components/CreateJob'
     import CreateManager from '@/components/CreateManager.vue'
@@ -46,7 +44,7 @@
     export default {
         name: 'Manager',
         components: {
-            //ModelList,
+            ModelList,
             JobList,
             CreateJob,
             CreateManager,

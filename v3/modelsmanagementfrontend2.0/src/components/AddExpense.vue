@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Add model to job</h2>
+        <h2>Add expense to job</h2>
         <div style="width:100%">
             <form @submit.prevent="AddToJob">
                 <div class="form-group">
@@ -11,8 +11,12 @@
                     <label for="jobId">Job Id</label>
                     <input class="form-control" type="text" v-model="form.jobId" name="jobId" />
                 </div>
+                <div class="form-group">
+                    <label for="jobId">Expense</label>
+                    <input class="form-control" type="text" v-model="form.expense" name="jobId" />
+                </div>
                 <div class="formgroup">
-                <input type="submit" class="button1" value="Add model to job" />
+                <input type="submit" class="button1" value="Add expense to job" />
             </div>
             </form>
         </div>
@@ -27,7 +31,8 @@
             return {
                 form: {
                     modelId: "",
-                    jobId: ""
+                    jobId: "",
+                    expense: 0
                 }
             }
         },

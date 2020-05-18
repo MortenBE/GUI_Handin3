@@ -3,16 +3,21 @@
         <div class="card">
             <JobList />
         </div>
+        <div class="card">
+            <AddExpense />
+        </div>
     </div>
 </template>
 
 <script>
     import JobList from '../components/JobList'
+    import AddExpense from '../components/AddExpense'
 
     export default {
         name: "Model",
         components: {
-            JobList
+            JobList,
+            AddExpense
         }
     }
 </script>

@@ -132,7 +132,7 @@ export default {
   },
           methods: {
     checkForm() {
-        let url = "https://localhost:44368/api/models";
+        let url = "https://localhost:5001/api/models";
         fetch(url, {
           method: "POST",
           credentials: "include",

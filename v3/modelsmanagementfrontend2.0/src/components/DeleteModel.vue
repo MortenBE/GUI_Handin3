@@ -1,26 +1,19 @@
 <template>
     <div>
-        <h2>Delete model</h2>
-        <!--<ModelList />-->
-
-        <div v-for="job in jobs" :key="job.EfJobId">
-            <div class="manage">   
-                <p style="width:85%; text-align:left;">Customer: {{job.customer}}, days: {{job.days}}, Job Location: {{job.location}}</p>                 
-                <button @click="removeModelFromJob" class="del">
-                    <i class="fa fa-trash"></i>
-                </button>
+        <h2>Delete model from job</h2>
+        <form @submit.prevent="removeModelFromJob">
+            <div class="form-group">
+                <label for="modelId">Model Id</label>
+                <input class="form-control" v-model="form.modelId" name="firstName" />
             </div>
+            <div class="form-group">
+                <label for="jobId">Job Id</label>
+                <input class="form-control" v-model="form.jobId" name="lastName" />
+                            <div class="col-5 form-group">
+                        <input type="submit" class="button1" value="Delete Model" />
+                </div>
         </div>
-
-        
-
-
-
-
-
-
-
-
+        </form>
     </div>
 </template>
 
@@ -29,15 +22,20 @@
 
     export default {
         name: "DeleteModel",
-        data() {
-            return {
-                //isLoading: true,
+  data()
+  {
+      return{
+            form: {
+              jobId: 1,
+              modelId: 1,
+
+            },
                 jobs: []
             }
         },        
         methods: {            
-            removeModelFromJob(ModelId) {
-                var url = "https://localhost:44368/api/jobs/" + this.job.jobId + "/model/" + ModelId;
+            removeModelFromJob() {
+                var url = "https://localhost:5001/api/jobs/" + this.form.jobId + "/model/" + this.form.modelId;
                 fetch(url, {
                     method: "DELETE",
                     credentials: "include",
@@ -46,26 +44,28 @@
                         "Content-Type": "application/json"
                     }
                 })
+                 .catch(error => () => console.log(error));
+                 console.log(url);
             },
-            getJobs() {
-                var url = "https://localhost:44368/api/Jobs/"
-                fetch(url, {
-                    method: "GET",
-                    credentials: "include",
-                    headers: {
-                        Authorization: "Bearer " + localStorage.getItem("token"),
-                        "Content-Type": "application/json"
-                    }
-                })
-                    .then(responseJson => responseJson.json())
-                    .then(data => {
-                        this.jobs = data;
-                        //this.isLoading = false;
-                    })
-                    // eslint-disable-next-line no-console
-                    .catch(error => () => console.log(error));
-                //this.isLoading = false;
-                console.log(this.jobs);
+getJobs()   {
+    var url = "https://localhost:5001/api/Jobs/"
+    fetch(url, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+        "Content-Type": "application/json"
+      }
+        })
+      .then(responseJson => responseJson.json())
+      .then(data => {
+        this.jobs = data;
+        //this.isLoading = false;
+      })
+      // eslint-disable-next-line no-console
+      .catch(error => () => console.log(error));
+      //this.isLoading = false;
+      console.log(this.jobs);
     }
     },
       mounted() {

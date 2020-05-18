@@ -52,7 +52,7 @@ export default {
   },
           methods: {
     checkForm() {
-        let url = "https://localhost:44368/api/jobs";
+        let url = "https://localhost:5001/api/jobs";
         fetch(url, {
           method: "POST",
           credentials: "include",
