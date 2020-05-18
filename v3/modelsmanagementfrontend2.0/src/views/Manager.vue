@@ -1,35 +1,38 @@
 <template>
-    <div class="container">
-        <div class="manager">
-                    <div class="card">
-            <ModelList />
-        </div>
-            <div class="card" style="width=1000px">
-                <JobList />
-            </div>
-            <div class="card" style="min-height:300px">
-                <CreateJob />
-            </div>
-        </div>
-        <div class="manager">
-            <div class="card" style="min-height:500px">
-                <CreateModel />
-            </div>
-            <div class="card" style="min-height:500px">
-                <DeleteModel />
-            </div>
-        </div>
+    <div class="container" style="">
         <div class="manager">
             <div class="card">
+            <ModelList />
+            </div>
+            <div class="card">
+                <JobList />
+            </div>
+            </div>
+            <div class="manager">
+            <div class="card">
+                <Expenses/>
+            </div>
+            
+            <div class="card" >
+                <CreateModel />
+            </div>
+            </div>
+            <div class="manager">
+            <div class="card" >
+                <CreateJob />
+            </div>
+            <div class="card">
                 <CreateManager />
+            </div>
+            </div>
+            <div class="manager">
+            <div class="card">
+                <DeleteModel />
             </div>
             <div class="card">
                 <AddModel />
             </div>
-            <div class="card">
-                <Expenses />
-            </div>
-        </div>
+            </div>  
     </div>
 </template>
 
@@ -60,12 +63,6 @@
 </script>
 
 <style>
-
-    /*#center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }*/
     .manager
     {        
         display: flex;
@@ -76,7 +73,7 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         margin: 10px;
         transition: 0.3s;
-        width: 1000px;
+        width: 500px;
         border-radius: 5px;
         text-align:center;       
         background-color:white;

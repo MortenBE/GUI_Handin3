@@ -74,5 +74,52 @@
 </script>
 
 <style scoped>
+    label{
+        margin: 2px; 
+    }
+    input{
+        margin: 2px;
+    }
+    
+.button1 {
+  
+  background-color: #2F2FA2; 
+  border: none;
+  color: white;  
+  padding: 4px 8px;
+  float:none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 5px;
+  
+}
 
+  .add {
+  background-color: greenyellow;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+  }
+  .del:hover {
+        background-color: red;
+  }
+
+    .but {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  }
+  .del:hover {
+  background-color: red;
+}
+ 
 </style>

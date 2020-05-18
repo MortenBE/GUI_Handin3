@@ -5,10 +5,10 @@
             <p>Loading content..</p>
         </div>
         <div v-for="model in models" :key="model.efModelId">
+            <p>Model Id: {{model.efModelId}} </p> 
             <p>Model Email: {{model.email}} </p>
             <p>Model Name: {{model.firstName}} {{model.lastName}} 
-            <p>Model PhoneNo: {{model.phoneNo}}
-            <p>ModelId: {{model.efModelId}} </p> 
+            <p>Model PhoneNo: {{model.phoneNo}} </p>
             <b>---------------------------------------------</b>
         </div>
     </div>
